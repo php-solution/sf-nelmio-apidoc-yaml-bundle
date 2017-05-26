@@ -1,0 +1,19 @@
+services:
+    nelmio_api_doc_yaml.extractor.chain:
+        class: 'PhpSolution\NelmioApiDocYamlBundle\Extractor\ChainApiDocExtractor'
+
+    nelmio_api_doc_yaml.extractor.yaml:
+        class: 'PhpSolution\NelmioApiDocYamlBundle\Extractor\YamlApiDocExtractor'
+        arguments: ['@nelmio_api_doc_yaml.yaml.provider', '@router']
+
+    nelmio_api_doc_yaml.extractor.yaml_caching:
+        class: 'PhpSolution\NelmioApiDocYamlBundle\Extractor\CachingYamlApiDocExtractor'
+        public: false
+        arguments: ['@nelmio_api_doc_yaml.yaml.provider', '@nelmio_api_doc_yaml.extractor.yaml', ~, '%kernel.debug%']
+
+    nelmio_api_doc_yaml.yaml.provider:
+        class: 'PhpSolution\NelmioApiDocYamlBundle\Extractor\YamlMetadataProvider'
+        public: false
+        arguments: ['%kernel.bundles%', ~, ~]
+        calls:
+            - [setFileLocator, ['@file_locator']]

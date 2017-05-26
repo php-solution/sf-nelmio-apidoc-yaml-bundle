@@ -1,0 +1,33 @@
+{
+    "name": "php-solution/nelmio-apidoc-yaml-bundle",
+    "type": "symfony-bundle",
+    "description": "This bundle provides an integration of NelmioApiDocBundle with yaml extractor",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Oleksandr Savchenko",
+            "email": "dev.olsav@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.5",
+        "symfony/symfony": ">=3.0",
+        "nelmio/api-doc-bundle": ">=2.9"
+    },
+    "require-dev": {
+        "phpunit/phpunit" : "~4.0||~5.0||~6.0"
+    },
+    "autoload":     {
+        "psr-4": { "PhpSolution\\NelmioApiDocYamlBundle\\": "src/" }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.x-dev"
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
+    }
+}
