@@ -1,5 +1,5 @@
 <?php
-namespace Ciklum\NelmioApiDocYamlBundle\DependencyInjection;
+namespace PhpSolution\NelmioApiDocYamlBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
